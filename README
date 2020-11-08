@@ -1,0 +1,84 @@
+itay.shukrun
+
+
+=============================
+=      File description     =
+=============================
+
+filesProcessing package - in charge of precessing the the command file and by
+    the commands filtering and sorting the files,
+    in this package there is Order package and Filtering package.
+
+Filtering package - Got 3 classes for each filter type, and got Filter class which
+    determent to which filter to use, by the help of parsing in filesprocessing package
+
+Order package - Got 3 classes for each order comparator, a class for the
+    sorting mechanism, and the father comparator.
+
+=============================
+=          Design           =
+=============================
+
+question 1:
+    First looking for Exception Type2 at directoryProcessor,
+    which than continue to parsing in the same package.
+
+    Filter package made from Class for every Filter type (Double, String, Bool)
+
+    Order package used inheritance with the comparators, those comparators
+    are used inside the quickSort.
+    
+    Important note is that DirecortyProcesser is save a whole section in strings
+    and switch section every loop, and not in the whole line in a single array,
+    so to save memory and time.
+
+    Editor is in charge for printing the correct files.
+
+    Created a class for each Exception.
+
+    Divided for Filter and Order packages in to be more modular,
+    and easy to understand.
+    The main program take part in the original package.
+
+=============================
+=  Implementation details   =
+=============================
+
+    The main of the program is at DirectoryProcessor, it checks first
+    the Exception type 2 errors, and after it sends it to parsing the command
+    file. Parsing using FilterArgsCheck, which inherit from parsing variables.
+    Parsing also using Filtering and Order package after it done with validating
+    lines.
+
+    Filter pack is using class for each Filter type in those filters
+    I used predicate, predicate is easy to use and got the nagate option
+    which makes it perfect for this exercise, Filter class job
+    was know which filter to use.
+
+Question 3:
+    Sorting is made by comparator and quick sort, comparator was sufficient and easy to use
+    choice, and make it shorter.
+    simplifying mainly.
+    I used Quick Sort which got the proper comparator, this comparator
+    worked for the quick sort in order to determent actions for it algorithm.
+    Quick sort is used because its quick and easy to use for me.
+
+
+Question 2:
+    I used for every exception different class,
+
+    first I detect type 2 exception in order to avoid any printing before it,
+    so it happen in DirectoryProcessor.
+
+    After no Type 2 exception raise I proceed for Type 1,
+    type 1 got checked in Parsing, which check every line of filter and order
+    before it got to the Filter and Sorting packages.
+    This exception doesn't interfere with the running of the program
+    so it got cached in parsing as well.
+
+
+=============================
+=    Answers to questions   =
+=============================
+
+    Was answered through the Design and implementation.
